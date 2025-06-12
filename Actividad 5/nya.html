@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pruebas de JavaScript: Números y Arreglos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Números y Arreglos en JavaScript</h1>
+        <p>Prof. Ramiro Estigarribia</p>
+    </header>
+    
+    <section>
+        <h2>Números en JavaScript</h2>
+        <p>Prueba los métodos <code>toFixed()</code>, <code>Number()</code> y <code>parseInt()</code> aquí:</p>
+        
+        <div>
+            <h3>Método <code>toFixed()</code></h3>
+            <input type="number" id="fixedNumber" value="9.656">
+            <button onclick="showToFixed()">Mostrar <code>toFixed()</code></button>
+            <p id="toFixedResult"></p>
+        </div>
+
+        <div>
+            <h3>Método <code>Number()</code></h3>
+            <input type="text" id="numberInput" value="10">
+            <button onclick="showNumberConversion()">Convertir con <code>Number()</code></button>
+            <p id="numberConversionResult"></p>
+        </div>
+
+        <div>
+            <h3>Método <code>parseInt()</code></h3>
+            <input type="text" id="parseIntInput" value="10.33">
+            <button onclick="showParseInt()">Convertir con <code>parseInt()</code></button>
+            <p id="parseIntResult"></p>
+        </div>
+    </section>
+    
+    <section>
+        <h2>Arreglos en JavaScript</h2>
+        <p>Prueba los métodos <code>push()</code>, <code>pop()</code>, <code>shift()</code>, <code>slice()</code>, <code>toString()</code> y <code>join()</code> aquí:</p>
+        
+        <div>
+            <h3>Agregar un elemento (Método <code>push()</code>)</h3>
+            <input type="text" id="pushInput" value="Lemon">
+            <button onclick="addElement()">Agregar Elemento</button>
+            <p id="pushResult"></p>
+        </div>
+
+        <div>
+            <h3>Eliminar el último elemento (Método <code>pop()</code>)</h3>
+            <button onclick="removeLastElement()">Eliminar Último Elemento</button>
+            <p id="popResult"></p>
+        </div>
+
+        <div>
+            <h3>Eliminar el primer elemento (Método <code>shift()</code>)</h3>
+            <button onclick="removeFirstElement()">Eliminar Primer Elemento</button>
+            <p id="shiftResult"></p>
+        </div>
+
+        <div>
+            <h3>Cortar un arreglo (Método <code>slice()</code>)</h3>
+            <button onclick="sliceArray()">Cortar Arreglo</button>
+            <p id="sliceResult"></p>
+        </div>
+
+        <div>
+            <h3>Convertir el arreglo en una cadena (Método <code>toString()</code>)</h3>
+            <button onclick="convertToString()">Convertir a Cadena</button>
+            <p id="toStringResult"></p>
+        </div>
+
+        <div>
+            <h3>Unir el arreglo con separador (Método <code>join()</code>)</h3>
+            <button onclick="joinArray()">Unir con Separador</button>
+            <p id="joinResult"></p>
+        </div>
+
+        <div>
+            <h3>Ordenar el arreglo (Método <code>sort()</code>)</h3>
+            <button onclick="sortArray()">Ordenar Arreglo</button>
+            <p id="sortResult"></p>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
