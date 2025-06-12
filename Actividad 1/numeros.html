@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulación de Cadenas en JavaScript</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: #fff;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            padding: 30px;
+            width: 90%;
+            max-width: 600px;
+            backdrop-filter: blur(10px);
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .example {
+            margin-top: 20px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+        }
+
+        .example h2 {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+        }
+
+        .example p {
+            font-size: 16px;
+            margin: 10px 0;
+        }
+
+        .code {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 10px;
+            border-radius: 5px;
+            font-family: 'Courier New', Courier, monospace;
+            margin: 10px 0;
+        }
+
+        .highlight {
+            color: #ff6f61;
+            font-weight: bold;
+        }
+
+        .button {
+            width: 100%;
+            padding: 12px;
+            background-color: #ff6f61;
+            border: none;
+            border-radius: 8px;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #ff3b2f;
+            transform: scale(1.05);
+        }
+
+        .output {
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+        }
+
+        .output p {
+            font-size: 16px;
+            margin: 10px 0;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Manipulación de Cadenas en JavaScript</h1>
+
+        <!-- Ejemplo 1: convertirYRedondear -->
+        <div class="example">
+            <h2>Convertir y Redondear</h2>
+            <p>Convierte una cadena en un número y lo redondea a dos decimales.</p>
+            <div class="code">
+                function convertirYRedondear(cadena) {<br>
+                &nbsp;&nbsp;let numero = Number(cadena);<br>
+                &nbsp;&nbsp;if (isNaN(numero)) {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;return "La cadena no es un número válido.";<br>
+                &nbsp;&nbsp;}<br>
+                &nbsp;&nbsp;let redondeado = numero.toFixed(2);<br>
+                &nbsp;&nbsp;return redondeado;<br>
+                }
+            </div>
+            <button class="button" onclick="mostrarConvertirYRedondear()">Mostrar Resultado</button>
+            <div class="output" id="convertirYRedondearOutput"></div>
+        </div>
+
+        <!-- Ejemplo 2: extraerEntero -->
+        <div class="example">
+            <h2>Extraer Entero</h2>
+            <p>Extrae el número entero de una cadena.</p>
+            <div class="code">
+                function extraerEntero(cadena) {<br>
+                &nbsp;&nbsp;let entero = parseInt(cadena, 10);<br>
+                &nbsp;&nbsp;if (isNaN(entero)) {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;return "La cadena no contiene un número entero válido.";<br>
+                &nbsp;&nbsp;}<br>
+                &nbsp;&nbsp;return entero;<br>
+                }
+            </div>
+            <button class="button" onclick="mostrarExtraerEntero()">Mostrar Resultado</button>
+            <div class="output" id="extraerEnteroOutput"></div>
+        </div>
+    </div>
+
+    <script>
+        // Función para convertir y redondear
+        function convertirYRedondear(cadena) {
+            let numero = Number(cadena);
+            if (isNaN(numero)) {
+                return "La cadena no es un número válido.";
+            }
+            let redondeado = numero.toFixed(2);
+            return redondeado;
+        }
+
+        // Función para extraer un entero
+        function extraerEntero(cadena) {
+            let entero = parseInt(cadena, 10);
+            if (isNaN(entero)) {
+                return "La cadena no contiene un número entero válido.";
+            }
+            return entero;
+        }
+
+        // Ejemplos de uso
+        let cadena1 = "123.456";
+        let cadena2 = "456.789";
+        let cadena3 = "123abc";
+        let cadena4 = "abc123";
+
+        // Mostrar resultado de convertirYRedondear
+        function mostrarConvertirYRedondear() {
+            document.getElementById("convertirYRedondearOutput").innerHTML = `
+                <p><b>Resultado para "${cadena1}":</b> ${convertirYRedondear(cadena1)}</p>
+                <p><b>Resultado para "${cadena2}":</b> ${convertirYRedondear(cadena2)}</p>
+            `;
+        }
+
+        // Mostrar resultado de extraerEntero
+        function mostrarExtraerEntero() {
+            document.getElementById("extraerEnteroOutput").innerHTML = `
+                <p><b>Resultado para "${cadena3}":</b> ${extraerEntero(cadena3)}</p>
+                <p><b>Resultado para "${cadena4}":</b> ${extraerEntero(cadena4)}</p>
+            `;
+        }
+    </script>
+</body>
+</html>
